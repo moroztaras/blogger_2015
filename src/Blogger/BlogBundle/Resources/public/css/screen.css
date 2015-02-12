@@ -14,7 +14,7 @@ body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:bef
 #wrapper span.highlight { color: #F48A00; }
 
 #header { border-bottom: 1px solid #ccc; margin-bottom: 20px; }
-#header .top { border-bottom: 1px solid #ccc; margin-bottom: 10px; }
+#header .top { border-bottom: 1px solid #ccc; margin-bottom: 10px;}
 #header ul.navigation { list-style: none; text-align: right; }
 #header .navigation li { display: inline }
 #header .navigation li a { display: inline-block; padding: 10px 15px; border-left: 1px solid #ccc; }
