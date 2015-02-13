@@ -7,6 +7,12 @@
         <h1>Контакти</h1>
     </header>
 
+    {% for flashMessage in app.session.flashbag.get('blogger-notice') %}
+        <div class="blogger-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
     <p>Щоб з нами зв'язатися, заповніть, будь ласка, форму:</p>
     <form action="{{ path('BloggerBlogBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
         {{ form_errors(form) }}
