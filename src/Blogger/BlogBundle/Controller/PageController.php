@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Blogger\BlogBundle\Entity\Enquiry;
 use Blogger\BlogBundle\Form\EnquiryType;
 
+/**
+ * Page controller.
+ */
 class PageController extends Controller
 {
     public function indexAction()
