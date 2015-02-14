@@ -23,8 +23,6 @@ class PageController extends Controller
             ->getResult();
 
         return $this->render('BloggerBlogBundle:Page:index.html.twig', array('blogs' => $blogs));
-
-        return $this->render('BloggerBlogBundle:Page:index.html.twig');
     }
 
     public function aboutAction()
