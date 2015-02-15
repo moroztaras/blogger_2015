@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Blogger\BlogBundle\Entity\Enquiry;
 use Blogger\BlogBundle\Form\EnquiryType;
 
+
 /**
  * Page controller.
  */
@@ -13,9 +14,11 @@ class PageController extends Controller
 {
     public function indexAction()
     {
-        $manager = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 
-        $blogs = $manager->createQueryBuilder()
+        #$blogs = $em->getRepository('BloggerBlogBundle:Blog')->getLatestBlogs();
+
+        $blogs = $em->createQueryBuilder()
             ->select('blog')
             ->from('BloggerBlogBundle:Blog',  'blog')
             ->addOrderBy('blog.created', 'DESC')
