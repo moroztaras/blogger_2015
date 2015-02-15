@@ -18,5 +18,7 @@
             <h3>Коментарі:</h3>
             {% include 'BloggerBlogBundle:Comment:index.html.twig' with { 'comments': comments } %}
         </section>
+        <h3>Створити коментар:</h3>
+        {% render 'BloggerBlogBundle:Comment:new' with { 'blog_id': blog.id } %}
     </section>
 {% endblock %}
