@@ -36,7 +36,10 @@ class CommentController extends Controller
         $form->Bind($request);
 
         if ($form->isValid()) {
-            // TODO: Persist the comment entity
+            $em = $this->getDoctrine()
+                ->getManager();
+            $em->persist($comment);
+            $em->flush();
 
             return $this->redirect($this->generateUrl('BloggerBlogBundle_blog_show', array(
                     'id' => $comment->getBlog()->getId())) .
