@@ -220,10 +220,10 @@ class Comment
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('user', new NotBlank(array(
-            'message' => 'You must enter your name'
+            'message' => 'Ви повинні ввести своє ім\'я'
         )));
         $metadata->addPropertyConstraint('comment', new NotBlank(array(
-            'message' => 'You must enter a comment'
+            'message' => 'Введіть свій коментар'
         )));
     }
 }
