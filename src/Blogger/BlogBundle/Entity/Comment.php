@@ -209,8 +209,8 @@ class Comment
     /**
      * @ORM\preUpdate
      */
-    #public function setUpdatedValue()
-    #{
-    #    $this->setUpdated(new \DateTime());
-    #}
+    public function setUpdatedValue()
+    {
+        $this->setUpdated(new \DateTime());
+    }
 }
