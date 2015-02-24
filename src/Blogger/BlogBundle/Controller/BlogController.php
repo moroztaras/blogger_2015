@@ -22,8 +22,6 @@ class BlogController extends Controller
             throw $this->createNotFoundException('Не вдалося знайти вказаного поста у блозі.');
         }
 
-        return $this->render('BloggerBlogBundle:Blog:show.html.twig', array(
-            'blog'      => $blog,
-        ));
+        return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('blog'=> $blog));
     }
 }
