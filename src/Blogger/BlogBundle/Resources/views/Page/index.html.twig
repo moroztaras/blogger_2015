@@ -16,7 +16,7 @@
 
             <footer class="meta">
                 <p>Комментарії: -</p>
-                <p>Автор: <span class="highlight">{{blog.author}}</span>. Дата: {{ blog.created|date('H:m:s d-m-Y') }}</p>
+                <p>Автор: <span class="highlight">{{blog.author}}</span>, о {{ blog.created|date('H:m:s') }}</p>
                 <p>Теги: <span class="highlight">{{ blog.tags }}</span></p>
             </footer>
         </article>
