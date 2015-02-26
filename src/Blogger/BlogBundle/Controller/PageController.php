@@ -15,14 +15,7 @@ class PageController extends Controller
     public function indexAction()
     {
         $manager = $this->getDoctrine()->getManager();
-
-        $blogs = $manager->createQueryBuilder()
-            ->select('blog')
-            ->from('BloggerBlogBundle:Blog',  'blog')
-            ->addOrderBy('blog.created', 'DESC')
-            ->getQuery()
-            ->getResult();
-
+        $blogs = $manager->getRepository('BloggerBlogBundle:Blog')->getLatestBlogs();
         return $this->render('BloggerBlogBundle:Page:index.html.twig', array('blogs' => $blogs));
     }
 
