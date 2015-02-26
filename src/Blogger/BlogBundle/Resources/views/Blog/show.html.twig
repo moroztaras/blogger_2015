@@ -12,5 +12,14 @@
         <div>
             <p>{{ blog.blog }}</p>
         </div>
+        <footer class="meta">
+            <p>Автор: <span class="highlight">{{blog.author}}</span>, о {{ blog.created|date('H:m:s') }}</p>
+        </footer>
     </article>
+    <section class="comments" id="comments">
+        <section class="previous-comments">
+            <h3>Коментарі</h3>
+            {% include 'BloggerBlogBundle:Comment:index.html.twig' with { 'comments': comments } %}
+        </section>
+    </section>
 {% endblock %}
