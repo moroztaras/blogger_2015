@@ -21,7 +21,12 @@ class BlogController extends Controller
         if (!$blog) {
             throw $this->createNotFoundException('Не вдалося знайти вказаного поста у блозі.');
         }
+        $comments = $em->getRepository('BloggerBlogBundle:Comment')
+                       ->getCommentsForBlog($blog->getId());
 
-        return $this->render('BloggerBlogBundle:Blog:show.html.twig', array('blog'=> $blog));
+        return $this->render('BloggerBlogBundle:Blog:show.html.twig', array(
+            'blog'      => $blog,
+            'comments'  => $comments
+        ));
     }
 }
