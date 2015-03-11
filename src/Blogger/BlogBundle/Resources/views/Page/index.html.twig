@@ -15,12 +15,12 @@
             </div>
 
             <footer class="meta">
-                <p>Комментарії: -</p>
-                <p>Автор: <span class="highlight">{{blog.author}}</span>, о {{ blog.created|date('H:m:s') }}</p>
+                <p>Комментарии: -</p>
+                <p>Автор: <span class="highlight">{{blog.author}}</span>, {{ blog.created|date('d-m-Y') }} о {{ blog.created|date('H:m:s') }}</p>
                 <p>Теги: <span class="highlight">{{ blog.tags }}</span></p>
             </footer>
         </article>
     {% else %}
-        <p>Не знайдено жодного запису у блозі</p>
+        <p>Незнайдено жодного паста на blogger 2015</p>
     {% endfor %}
 {% endblock %}
