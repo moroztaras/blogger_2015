@@ -15,7 +15,7 @@
             </div>
 
             <footer class="meta">
-                <p>Комментарии: -</p>
+                <p>Комментарии: <a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id }) }}#comments">{{ blog.comments|length }}</a></p>
                 <p>Автор: <span class="highlight">{{blog.author}}</span>, {{ blog.created|date('d-m-Y') }} о {{ blog.created|date('H:m:s') }}</p>
                 <p>Теги: <span class="highlight">{{ blog.tags }}</span></p>
             </footer>
