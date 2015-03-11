@@ -1,4 +1,5 @@
 <?php
+// src/Blogger/BlogBundle/Entity/Repository/CommentRepository.php
 
 namespace Blogger\BlogBundle\Entity\Repository;
 
@@ -22,8 +23,9 @@ class CommentRepository extends EntityRepository
 
         if (false === is_null($approved))
             $qb->andWhere('comment.approved = :approved')
-               ->setParameter('approved', $approved);
+                ->setParameter('approved', $approved);
 
-        return $qb->getQuery()->getResult();
+        return $qb->getQuery()
+            ->getResult();
     }
 }
