@@ -1,0 +1,12 @@
+<section class="section" xmlns="http://www.w3.org/1999/html">
+    <header>
+        <h3>Теги</h3>
+    </header>
+    <p class="tags">
+        {% for tag, weight in tags %}
+            <span class="weight-{{ weight }}">{{ tag }}</span>
+        {% else %}
+            <p>Там немає тегів</p>
+        {% endfor %}
+    </p>
+</section>
