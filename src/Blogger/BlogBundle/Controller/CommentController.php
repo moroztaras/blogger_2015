@@ -43,7 +43,7 @@ class CommentController extends Controller
 
             return $this->redirect($this->generateUrl('BloggerBlogBundle_blog_show', array(
                     'id' => $comment->getBlog()->getId())) .
-                    '#comment-' . $comment->getId()
+                '#comment-' . $comment->getId()
             );
         }
 
@@ -61,7 +61,7 @@ class CommentController extends Controller
         $blog = $em->getRepository('BloggerBlogBundle:Blog')->find($blog_id);
 
         if (!$blog) {
-            throw $this->createNotFoundException('Вказаного поста не знайдено!');
+            throw $this->createNotFoundException('Unable to find Blog post.');
         }
 
         return $blog;
