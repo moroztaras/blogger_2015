@@ -14,9 +14,25 @@ class PageController extends Controller
 {
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $blogs = $em->getRepository('BloggerBlogBundle:Blog')->getLatestBlogs();
+        $manager = $this->getDoctrine()->getManager();
+        $blogs = $manager->getRepository('BloggerBlogBundle:Blog')->getLatestBlogs();
         return $this->render('BloggerBlogBundle:Page:index.html.twig', array('blogs' => $blogs));
+    }
+
+    public function sidebarAction()
+    {
+        $manager = $this->getDoctrine()
+            ->getManager();
+
+        $tags = $manager->getRepository('BloggerBlogBundle:Blog')
+            ->getTags();
+
+        $tagWeights = $manager->getRepository('BloggerBlogBundle:Blog')
+            ->getTagWeights($tags);
+        
+        return $this->render('BloggerBlogBundle:Page:sidebar.html.twig', array(
+            'tags' => $tagWeights
+        ));
     }
 
     public function aboutAction()
