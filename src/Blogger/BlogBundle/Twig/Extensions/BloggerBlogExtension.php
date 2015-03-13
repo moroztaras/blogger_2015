@@ -22,25 +22,25 @@ class BloggerBlogExtension extends \Twig_Extension
         {
             // Seconds
             $time = $delta;
-            $duration = $time . " second" . (($time > 1) ? "s" : "") . " ago";
+            $duration = $time . " секунд". (($time > 1) ? "и" : "а") . " тому";
         }
         else if ($delta <= 3600)
         {
             // Mins
             $time = floor($delta / 60);
-            $duration = $time . " minute" . (($time > 1) ? "s" : "") . " ago";
+            $duration = $time . " хвилин" . (($time > 1) ? "и" : "") . " тому";
         }
         else if ($delta <= 86400)
         {
             // Hours
             $time = floor($delta / 3600);
-            $duration = $time . " hour" . (($time > 1) ? "s" : "") . " ago";
+            $duration = $time . " годин" . (($time > 1) ? "и" : "у") . " тому";
         }
         else
         {
             // Days
             $time = floor($delta / 86400);
-            $duration = $time . " day" . (($time > 1) ? "s" : "") . " ago";
+            $duration = $time . " д" . (($time > 1) ? "нів" : "ень") . " тому";
         }
 
         return $duration;
