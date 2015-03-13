@@ -98,6 +98,7 @@ class Blog
     public function setTitle($title)
     {
         $this->title = $title;
+        $this->setSlug($this->title);
 
         return $this;
     }
@@ -296,8 +297,7 @@ class Blog
      */
     public function setSlug($slug)
     {
-        $this->slug = $slug;
-
+        $this->slug = $this->slugify($slug);
         return $this;
     }
 
