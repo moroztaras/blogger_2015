@@ -10,6 +10,6 @@ class BlogTest extends \PHPUnit_Framework_TestCase
     {
         $blog = new Blog();
         $this->assertEquals('hello-world', $blog->slugify('Hello World'));
-        $this->assertEquals('Hi, Moroz Taras', $blog->slugify('hi, Moroz Taras'));
+        $this->assertEquals('hi-moroz-taras', $blog->slugify('Hi Moroz Taras'));
     }
 }
