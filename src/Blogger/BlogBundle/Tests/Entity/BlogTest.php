@@ -15,4 +15,20 @@ class BlogTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('blogger', $blog->slugify('blogger '));
         $this->assertEquals('blogger', $blog->slugify(' blogger'));
     }
+
+    public function testSetSlug()
+    {
+        $blog = new Blog();
+
+        $blog->setSlug('Blogger Blog');
+        $this->assertEquals('blogger-blog', $blog->getSlug());
+    }
+
+    public function testSetTitle()
+    {
+        $blog = new Blog();
+
+        $blog->setTitle('Hello World');
+        $this->assertEquals('hello-world', $blog->getSlug());
+    }
 }
