@@ -79,5 +79,8 @@ doctrine_migrations:
     table_name: migration_versions
     name: Application Migrations
 
-    assetic:
-        bundles:    [BloggerBlogBundle]
+assetic:
+    bundles:    [BloggerBlogBundle]
+    filters:
+        yui_css:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.8.jar
