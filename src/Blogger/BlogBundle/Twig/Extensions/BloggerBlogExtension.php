@@ -24,17 +24,17 @@ class BloggerBlogExtension extends \Twig_Extension
             $time = $delta;
             $duration = $time . " секунд". (($time > 1) ? "и" : "а") . " тому";
         }
-        else if ($delta <= 3600)
+        else if ($delta < 3600)
         {
             // Mins
             $time = floor($delta / 60);
-            $duration = $time . " хвилин" . (($time > 1) ? "и" : "") . " тому";
+            $duration = $time . " хвилин" . (($time > 1) ? "и" : "а") . " тому";
         }
-        else if ($delta <= 86400)
+        else if ($delta < 86400)
         {
             // Hours
             $time = floor($delta / 3600);
-            $duration = $time . " годин" . (($time > 1) ? "и" : "у") . " тому";
+            $duration = $time . " годин" . (($time > 1) ? "и" : "а") . " тому";
         }
         else
         {
