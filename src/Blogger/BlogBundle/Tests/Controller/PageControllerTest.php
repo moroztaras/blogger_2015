@@ -22,6 +22,11 @@ class PageControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
 
         // Check there are some blog entries on the page
-        $this->assertTrue($crawler->filter('article.blog')->count() >=1);
+        $this->assertTrue($crawler->filter('article.blog')->count() >0);
+
+        // Find the first link, get the title, ensure this is loaded on the next page
+        $blogLink   = $crawler->filter('article.blog h2 a')->first();
+        $blogTitle  = $blogLink->text();
+        $crawler    = $client->click($blogLink->link());
     }
 }
