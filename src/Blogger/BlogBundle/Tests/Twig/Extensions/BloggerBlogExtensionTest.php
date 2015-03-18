@@ -19,7 +19,7 @@ class BloggerBlogExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("2 години тому", $blog->createdAgo($this->getDateTime(-7200)));
         $this->assertEquals("5 днів тому", $blog->createdAgo($this->getDateTime(-432000)));
 
-        $this->assertEquals("5 днів тому", $blog->createdAgo($this->getDateTime(-32000)));//error test
+        //$this->assertEquals("5 днів тому", $blog->createdAgo($this->getDateTime(-32000)));//error test
 
         // Cannot create time in the future
         $this->setExpectedException('\InvalidArgumentException');
