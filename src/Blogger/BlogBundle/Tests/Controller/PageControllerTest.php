@@ -12,6 +12,6 @@ class PageControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/about');
 
-        $this->assertEquals(1, $crawler->filter('h1:contains("Про автора Blogger 2015")')->count());
+        $this->assertEquals(1, $crawler->filter('h1:contains("Контакти")')->count());
     }
 }
