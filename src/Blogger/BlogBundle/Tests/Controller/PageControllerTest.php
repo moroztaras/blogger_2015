@@ -14,7 +14,7 @@ class PageControllerTest extends WebTestCase
 
         $this->assertEquals(1, $crawler->filter('h1:contains("Про автора Blogger 2015")')->count());
     }
-
+/*
     public function testIndex()
     {
         $client = static::createClient();
@@ -31,5 +31,41 @@ class PageControllerTest extends WebTestCase
 
         // Check the h2 has the blog title in it
         $this->assertEquals(1, $crawler->filter('h2:contains("' . $blogTitle .'")')->count());
+    }
+*/
+
+    public function testContact()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/contact');
+
+        $this->assertEquals(1, $crawler->filter('h1:contains("Контакти")')->count());
+
+        // Select based on button value, or id or name for buttons
+        $form = $crawler->selectButton('Відправити')->form();
+
+        $form['contact[name]']       = 'Мороз Тарас';
+        $form['contact[email]']      = 'moroztaras@i.ua';
+        $form['contact[subject]']    = 'Тема повідомлення';
+        $form['contact[body]']       = 'Довжина самого повідомлення повинна бути не менше пядесяти символів, так як форма перевіряється на валідацію';
+
+        $crawler = $client->submit($form);
+        // Check email has been sent
+        if ($profile = $client->getProfile())
+        {
+            $swiftMailerProfiler = $profile->getCollector('swiftmailer');
+            // Only 1 message should have been sent
+            $this->assertEquals(1, $swiftMailerProfiler->getMessageCount());
+            // Get the first message
+            $messages = $swiftMailerProfiler->getMessages();
+            $message  = array_shift($messages);
+            $symblogEmail = $client->getContainer()->getParameter('blogger_blog.emails.contact_email');
+            // Check message is being sent to correct address
+            $this->assertArrayHasKey($symblogEmail, $message->getTo());
+        }
+        // Need to follow redirect
+        $crawler = $client->followRedirect();
+        $this->assertTrue($crawler->filter('.blogger-notice:contains("Ваш запит успішно відправлений. Дякуємо!")')->count() > 0);
     }
 }
