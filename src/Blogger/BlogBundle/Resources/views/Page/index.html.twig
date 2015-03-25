@@ -16,7 +16,7 @@
 
             <footer class="meta">
                 <p><img class="img" src="{{ asset('bundles/bloggerblog/images/comments.png')}}"/>Коментарі: <a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
-                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/views.png')}}"/>Переглядів: -</p>
+                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/views.png')}}"/>Переглядів: {{ blog.views }}</p>
                 <p><img class="img" src="{{ asset('bundles/bloggerblog/images/like.png')}}"/>Подобається: -</p>
                 <p><img class="img" src="{{ asset('bundles/bloggerblog/images/author.png')}}"/>Автор: <span class="highlight">{{blog.author}}</span>, {{ blog.created|date('d-m-Y') }} о {{ blog.created|date('H:m:s') }}</p>
                 <p><img class="img" src="{{ asset('bundles/bloggerblog/images/tags.png')}}"/>Теги: <span class="highlight">{{ blog.tags }}</span></p>
