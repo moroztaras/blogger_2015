@@ -64,6 +64,11 @@ class Blog
      */
     protected $slug;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $views;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -337,5 +342,27 @@ class Blog
         }
 
         return $text;
+    }
+    /**
+     * Set counter
+     *
+     * @param integer $views
+     * @return Blog
+     */
+    public function setViews($views=0)
+    {
+        $this->views = $views;
+
+        return $this;
+    }
+
+    /**
+     * Get views
+     *
+     * @return integer
+     */
+    public function getViews()
+    {
+        return $this->views;
     }
 }
