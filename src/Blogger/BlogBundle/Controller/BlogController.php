@@ -18,6 +18,9 @@ class BlogController extends Controller
 
         $blog = $em->getRepository('BloggerBlogBundle:Blog')->find($id);
 
+        $blog->setViews($blog->getViews()+1);
+        $em->flush();
+
         if (!$blog) {
             throw $this->createNotFoundException('Не вдалося знайти вказаного поста у блозі.');
         }
