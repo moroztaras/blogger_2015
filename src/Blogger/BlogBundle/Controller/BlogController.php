@@ -33,4 +33,18 @@ class BlogController extends Controller
             'comments'  => $comments
         ));
     }
+
+    public function createAction(Request $request)
+    {
+        $entity = new Blog();
+        $form = $this->createForm(new EnquiryType(), $entity);
+        $form->bind($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($entity);
+            $em->flush();
+        }
+    }
 }
