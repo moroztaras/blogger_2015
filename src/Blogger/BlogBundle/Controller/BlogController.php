@@ -47,4 +47,26 @@ class BlogController extends Controller
             $em->flush();
         }
     }
+
+    public function uploadAction(Request $request)
+    {
+        $blog = new Blog();
+        $form = $this->createFormBuilder($blog)
+            ->add('name')
+            ->add('file')
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($blog);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl());
+        }
+
+        return array('form' => $form->createView());
+    }
 }
