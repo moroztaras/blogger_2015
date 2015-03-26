@@ -3,3 +3,15 @@ services:
         class: Blogger\BlogBundle\Twig\Extensions\BloggerBlogExtension
         tags:
             - { name: twig.extension }
+
+    blogger_blog.admin.blog:
+        class: Blogger\BlogBundle\Admin\BlogAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Blogger 2015, label: Пости }
+        arguments: [null, Blogger\BlogBundle\Entity\Blog, BloggerBlogBundle:BlogAdmin]
+
+    blogger_blog.admin.comment:
+        class: Blogger\BlogBundle\Admin\CommentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Blogger 2015, label: Коментарі }
+        arguments: [null, Blogger\BlogBundle\Entity\Comment, BloggerBlogBundle:CommentAdmin]
