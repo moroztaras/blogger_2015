@@ -30,6 +30,13 @@
                         <li><a href="{{ path('BloggerBlogBundle_homepage') }}">Головна</a></li>
                         <li><a href="{{ path('BloggerBlogBundle_about') }}">Про нас</a></li>
                         <li><a href="{{ path('BloggerBlogBundle_contact') }}">Контакти</a></li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li><a href="{{ path('BloggerBlogBundle_homepage') }}admin">Адмін панель</a></li>
+                            <li><a href="{{ path('fos_user_profile_show') }}">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
+                            {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
+                            {% endif %}
                     </ul>
                 </nav>
             {% endblock %}
@@ -54,6 +61,5 @@
         {% endblock %}
     </div>
 </section>
-
 </body>
 </html>
