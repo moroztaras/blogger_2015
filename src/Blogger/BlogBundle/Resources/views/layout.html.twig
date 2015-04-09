@@ -12,7 +12,10 @@
     {% endstylesheets %}
 {% endblock %}
 
-
 {% block sidebar %}
     {{ render(controller( 'BloggerBlogBundle:Page:sidebar')) }}
+{% endblock %}
+
+{% block body %}
+    {{ block('fos_user_content') }}
 {% endblock %}
