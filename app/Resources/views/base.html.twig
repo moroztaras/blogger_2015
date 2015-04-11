@@ -57,7 +57,10 @@
 
     <div id="footer">
         {% block footer %}
-            Blogger 2015 © - <a href="https://github.com/moroztaras">{{ 'base.author'|trans({}, 'translation') }}</a>. {{ 'base.all_rights_reserved'|trans({}, 'translation') }}.
+            Blogger 2015 © - <a href="https://github.com/moroztaras">{{ 'base.author'|trans({}, 'translation') }}</a>. {{ 'base.all_rights_reserved'|trans({}, 'translation') }}.<br>
+            <a href="{{  path('BloggerBlogBundle_homepage',{_locale: "uk"}) }}">{{ 'base.translation.uk'|trans({}, 'translation') }}</a> |
+            <a href="{{  path('BloggerBlogBundle_homepage',{_locale: "ru"}) }}">{{ 'base.translation.ru'|trans({}, 'translation') }}</a> |
+            <a href="{{  path('BloggerBlogBundle_homepage',{_locale: "en"}) }}">{{ 'base.translation.en'|trans({}, 'translation') }}</a>
         {% endblock %}
     </div>
 </section>
