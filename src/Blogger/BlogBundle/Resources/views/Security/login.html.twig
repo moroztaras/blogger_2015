@@ -1,10 +1,10 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
-{% block title %}Авторизація{% endblock %}
+{% block title %}{{ 'security.login.title'|trans({}, 'translation') }}{% endblock %}
 {% block fos_user_content %}
     <header>
-        <h2>Авторизація</h2>
+        <h2>{{ 'security.login.title'|trans({}, 'translation') }}</h2>
     </header>
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <a href="{{ path('fos_user_registration_register') }}">Реєстація</a>
+                <a href="{{ path('fos_user_registration_register') }}">{{ 'security.login.register'|trans({}, 'translation') }}</a>
             </td>
         </tr>
     </table>

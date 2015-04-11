@@ -1,7 +1,10 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
-{% block title %}Профіль{% endblock %}
+{% block title %}{{ 'profile.show.title'|trans({}, 'translation') }}{% endblock %}
 {% block fos_user_content %}
+    <header>
+        <h2>{{ 'profile.show.title'|trans({}, 'translation') }}</h2>
+    </header>
     {% include "FOSUserBundle:Profile:show_content.html.twig" %}
-    <a href="{{ path('fos_user_profile_edit') }}">Редагувати</a>
+    <a href="{{ path('fos_user_profile_edit') }}">{{ 'profile.show.edit'|trans({}, 'translation') }}</a>
 {% endblock fos_user_content %}

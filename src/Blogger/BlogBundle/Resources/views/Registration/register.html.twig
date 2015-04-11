@@ -1,9 +1,9 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
-{% block title %}Реєстрація{% endblock %}
+{% block title %}{{ 'registration.register.title'|trans({}, 'translation') }}{% endblock %}
 
 {% block fos_user_content %}
     <header>
-        <h2>Реєстрація</h2>
+        <h2>{{ 'registration.register.title'|trans({}, 'translation') }}</h2>
     </header>
     {% include "FOSUserBundle:Registration:register_content.html.twig" %}
 {% endblock fos_user_content %}
