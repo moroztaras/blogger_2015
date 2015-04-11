@@ -1,0 +1,76 @@
+#Base
+base:
+    index: "Home"
+    about: "About Us"
+    contact: "Contact"
+    admin: "Admin panel"
+    create_new_blog: "Create a new post"
+    all_rights_reserved: "All rights reserved"
+    author: "Moroz Taras"
+
+#Page
+page:
+    index:
+          title: "Home"
+          learn_more: "Learn more"
+          comments: "Comments"
+          views: "Views"
+          like: "Like"
+          author: "Author"
+          tegs: "Tegs"
+          not_found_post_in_the_blog: "We have not found any post in the blog"
+    about:
+          title: "About Us"
+          about_the_author: "About the author"
+    contact:
+          title: "Contact"
+          info: "To contact us, fill in a form"
+          submit: "Dispatch"
+    contact_email:
+          contact_the_request_of: "Contact the request of"
+          reply_to_this: "Reply to this"
+          subject: "Subject"
+          message: "Message"
+    sidebar:
+          tags: "Tags"
+          no_tags: "No tags"
+          recent_comments: "Recent comments"
+          commented: "commented"
+          no_comments: "No comments"
+
+#Comment
+comment:
+    index:
+        leave_a_comment: "leave a comment"
+        no_comments: "To post this comment yet. Be the first and add your comments"
+    form:
+        submit: "Send"
+    create:
+        title: "Create comment"
+        create_comment_for_blog: "Create post a comment"
+
+#Blog
+blog:
+    show:
+      image_not_found: "image not found"
+      comments: "Comments"
+      your_comment: "Your comment"
+
+#Security
+security:
+    login:
+      title: "Authorization"
+      register: "Registration"
+
+#Registration
+registration:
+    register:
+      title: "Registration"
+
+#Profile
+profile:
+  show:
+    title: "Profile"
+    edit: "Edit"
+  edit:
+    title: "Edit profile"
