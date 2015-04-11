@@ -1,6 +1,6 @@
-Контактний запит від {{ enquiry.name }} о {{ "now" | date("Y-m-d H:i") }}.
+{{ 'page.contact_email.contact_the_request_of'|trans({}, 'translation') }} {{ enquiry.name }} о {{ "now" | date("Y-m-d H:i") }}.
 
-Відповісти на: {{ enquiry.email }}
-Тема: {{ enquiry.subject }}
-Повідомлення:
+{{ 'page.contact_email.reply_to_this'|trans({}, 'translation') }}: {{ enquiry.email }}
+{{ 'page.contact_email.subject'|trans({}, 'translation') }}: {{ enquiry.subject }}
+{{ 'page.contact_email.message'|trans({}, 'translation') }}:
 {{ enquiry.body }}

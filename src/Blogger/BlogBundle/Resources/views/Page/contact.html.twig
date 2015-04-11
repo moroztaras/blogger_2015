@@ -1,10 +1,10 @@
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
 
-{% block title %}Контакти{% endblock%}
+{% block title %}{{ 'page.contact.title'|trans({}, 'translation') }}{% endblock%}
 
 {% block body %}
     <header>
-        <h1>Контакти</h1>
+        <h1>{{ 'page.contact.title'|trans({}, 'translation') }}</h1>
     </header>
 
     {% for flashMessage in app.session.flashbag.get('blogger-notice') %}
@@ -13,7 +13,7 @@
         </div>
     {% endfor %}
 
-    <p>Щоб з нами зв'язатися, заповніть, будь ласка, форму:</p>
+    <p>{{ 'page.contact.info'|trans({}, 'translation') }}:</p>
     <form action="{{ path('BloggerBlogBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
         {{ form_errors(form) }}
 
@@ -24,6 +24,6 @@
 
         {{ form_rest(form) }}
 
-        <input type="submit" value="Відправити" />
+        <input type="submit" value="{{ 'page.contact.submit'|trans({}, 'translation') }}" />
     </form>
 {% endblock %}

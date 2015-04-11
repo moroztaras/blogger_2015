@@ -1,17 +1,17 @@
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
 
-{% block title %}Про нас{% endblock%}
+{% block title %}{{ 'page.about.title'|trans({}, 'translation') }}{% endblock%}
 
 {% block body %}
     <header>
-        <h1>Про автора Blogger 2015</h1>
+        <h1>{{ 'page.about.about_the_author'|trans({}, 'translation') }} Blogger 2015</h1>
     </header>
     <article>
         <p><img id="img_author" src="{{ asset('bundles/bloggerblog/images/author_blogger.jpg')}}"/>
             Вітаю Вас. Мені дуже приємно що Ви вирішили познаймитися зімною.<br>
             Мене звати Мороз Тарас, я є адміністратором і головним розробником цього блогу.<br>
             Проект створюється на базі framework Symfony2 за сприяння проекту GeekHub курсу Advanced PHP.<br>
-            лютий 2015 року.
+            Початок розробки: лютий 2015 року.
         </p>
     </article>
 {% endblock %}

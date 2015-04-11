@@ -1,5 +1,5 @@
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
-{% block title %}Головна{% endblock %}
+{% block title %}{{ 'page.index.title'|trans({}, 'translation') }}{% endblock %}
 
 {% block body %}
     {% for blog in blogs %}
@@ -12,18 +12,18 @@
             <img src="{{ asset(['bundles/bloggerblog/images/', blog.image]|join) }}" />
             <div class="snippet">
                 <p>{{ blog.blog(500) }}</p>
-                <p class="continue"><a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">Докладніше...</a></p>
+                <p class="continue"><a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">{{ 'page.index.learn_more'|trans({}, 'translation') }}...</a></p>
             </div>
 
             <footer class="meta">
-                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/comments.png')}}"/>Коментарі: <a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
-                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/views.png')}}"/>Переглядів: {{ blog.views }}</p>
-                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/like.png')}}"/>Подобається: -</p>
-                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/author.png')}}"/>Автор: <span class="highlight">{{blog.author}}</span>, {{ blog.created|date('d-m-Y') }} о {{ blog.created|date('H:m:s') }}</p>
-                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/tags.png')}}"/>Теги: <span class="highlight">{{ blog.tags }}</span></p>
+                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/comments.png')}}"/>{{ 'page.index.comments'|trans({}, 'translation') }}: <a href="{{ path('BloggerBlogBundle_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
+                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/views.png')}}"/>{{ 'page.index.views'|trans({}, 'translation') }}: {{ blog.views }}</p>
+                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/like.png')}}"/>{{ 'page.index.like'|trans({}, 'translation') }}: -</p>
+                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/author.png')}}"/>{{ 'page.index.author'|trans({}, 'translation') }}: <span class="highlight">{{blog.author}}</span>, {{ blog.created|date('d-m-Y') }} о {{ blog.created|date('H:m:s') }}</p>
+                <p><img class="img" src="{{ asset('bundles/bloggerblog/images/tags.png')}}"/>{{ 'page.index.tegs'|trans({}, 'translation') }}: <span class="highlight">{{ blog.tags }}</span></p>
             </footer>
         </article>
     {% else %}
-        <p>Незнайдено жодного паста на blogger 2015</p>
+        <p>{{ 'page.index.not_found_post_in_the_blog'|trans({}, 'translation') }} Blogger 2015</p>
     {% endfor %}
 {% endblock %}
