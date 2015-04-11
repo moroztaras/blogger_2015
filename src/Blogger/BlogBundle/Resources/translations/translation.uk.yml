@@ -36,7 +36,7 @@ page:
           no_tags: "Там немає тегів"
           recent_comments: "Останні коментарі"
           commented: "прокоментував"
-          no_comments: "Комментарів немає"
+          no_comments: "Коментарів немає"
 
 #Comment
 comment:
@@ -44,10 +44,10 @@ comment:
         leave_a_comment: "залишив коментар"
         no_comments: "До цього поста поки немає коментарів. Будьте першим і додайте свій коментар"
     form:
-        post: "Надіслати"
+        submit: "Надіслати"
     create:
         title: "Створити коментар"
-        create_comment_for_blog: "Створити кометар для поста"
+        create_comment_for_blog: "Створити коментар для поста"
 
 #Blog
 blog:
@@ -60,7 +60,7 @@ blog:
 security:
     login:
       title: "Авторизація"
-      register: "Реєстація"
+      register: "Реєстрація"
 
 #Registration
 registration:
