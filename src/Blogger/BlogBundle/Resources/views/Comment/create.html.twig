@@ -1,8 +1,8 @@
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
 
-{% block title %}Створити коментар{% endblock%}
+{% block title %}{{ 'comment.create.title'|trans({}, 'translation') }}{% endblock%}
 
 {% block body %}
-    <h1>Створити кометар для поста "{{ comment.blog.title }}"</h1>
+    <h1>{{ 'comment.create.create_comment_for_blog'|trans({}, 'translation') }} "{{ comment.blog.title }}"</h1>
     {% include 'BloggerBlogBundle:Comment:form.html.twig' with { 'form': form } %}
 {% endblock %}

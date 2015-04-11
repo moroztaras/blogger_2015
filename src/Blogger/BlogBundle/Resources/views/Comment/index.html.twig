@@ -1,10 +1,10 @@
 {% for comment in comments %}
     <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
         <header>
-            <p><span class="highlight">{{ comment.user }}</span> залишив коментар <time datetime="{{ comment.created|date('c') }}">{{ comment.created|created_ago }}</time></p>
+            <p><span class="highlight">{{ comment.user }}</span> {{ 'comment.index.leave_a_comment'|trans({}, 'translation') }} <time datetime="{{ comment.created|date('c') }}">{{ comment.created|created_ago }}</time></p>
         </header>
         <p>{{ comment.comment }}</p>
     </article>
 {% else %}
-    <p>До цього поста поки немає коментарів. Будьте першим і додайте свій коментар ...</p>
+    <p>{{ 'comment.index.no_comments'|trans({}, 'translation') }}...</p>
 {% endfor %}
