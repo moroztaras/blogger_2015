@@ -1,0 +1,76 @@
+#Base
+base:
+    index: "Головна"
+    about: "Про нас"
+    contact: "Контакти"
+    admin: "Адмін панель"
+    create_new_blog: "Створити новий пост"
+    all_rights_reserved: "Всі права захищені"
+    author: "Мороз Тарас"
+
+#Page
+page:
+    index:
+          title: "Головна"
+          learn_more: "Докладніше"
+          comments: "Коментарі"
+          views: "Переглядів"
+          like: "Подобається"
+          author: "Автор"
+          tegs: "Теги"
+          not_found_post_in_the_blog: "Незнайдено жодного поста у блозі"
+    about:
+          title: "Про нас"
+          about_the_author: "Про автора"
+    contact:
+          title: "Контакти"
+          info: "Щоб з нами зв'язатися, заповніть, будь ласка, форму"
+          submit: "Відправити"
+    contact_email:
+          contact_the_request_of: "Контактний запит від"
+          reply_to_this: "Відповісти на"
+          subject: "Тема"
+          message: "Повідомлення"
+    sidebar:
+          tags: "Теги"
+          no_tags: "Там немає тегів"
+          recent_comments: "Останні коментарі"
+          commented: "прокоментував"
+          no_comments: "Комментарів немає"
+
+#Comment
+comment:
+    index:
+        leave_a_comment: "залишив коментар"
+        no_comments: "До цього поста поки немає коментарів. Будьте першим і додайте свій коментар"
+    form:
+        post: "Надіслати"
+    create:
+        title: "Створити коментар"
+        create_comment_for_blog: "Створити кометар для поста"
+
+#Blog
+blog:
+    show:
+      image_not_found: "малюнок не знайдено"
+      comments: "Коментарі"
+      your_comment: "Ваш коментар"
+
+#Security
+security:
+    login:
+      title: "Авторизація"
+      register: "Реєстація"
+
+#Registration
+registration:
+    register:
+      title: "Реєстрація"
+
+#Profile
+profile:
+  show:
+    title: "Профіль"
+    edit: "Редагувати"
+  edit:
+    title: "Редагувати профіль"
