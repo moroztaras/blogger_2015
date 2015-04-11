@@ -1,21 +1,24 @@
 #pages
 BloggerBlogBundle_homepage:
     pattern:  /
-    defaults: { _controller: BloggerBlogBundle:Page:index }
+    defaults: { _controller: BloggerBlogBundle:Page:index}
     requirements:
         _method:  GET
+        _locale: uk|en|ru
 
 BloggerBlogBundle_about:
     pattern:  /about
     defaults: { _controller: BloggerBlogBundle:Page:about }
     requirements:
         _method:  GET
+        _locale: uk|en|ru
 
 BloggerBlogBundle_contact:
     pattern:  /contact
     defaults: { _controller: BloggerBlogBundle:Page:contact }
     requirements:
         _method:  GET|POST
+        _locale: uk|en|ru
 
 #posts
 BloggerBlogBundle_blog_show:
@@ -23,6 +26,7 @@ BloggerBlogBundle_blog_show:
     defaults: { _controller: BloggerBlogBundle:Blog:show }
     requirements:
         _method:  GET
+        _locale: uk|en|ru
 
 #comment
 BloggerBlogBundle_comment_create:
@@ -30,3 +34,4 @@ BloggerBlogBundle_comment_create:
     defaults: { _controller: BloggerBlogBundle:Comment:create }
     requirements:
         _method:  POST
+        _locale: uk|en|ru
