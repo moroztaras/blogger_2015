@@ -7,6 +7,10 @@ base:
     create_new_blog: "Створити новий пост"
     all_rights_reserved: "Всі права захищені"
     author: "Мороз Тарас"
+    translation:
+            uk: "Українська"
+            ru: "Російська"
+            en: "Англійська"
 
 #Page
 page:

@@ -7,6 +7,10 @@ base:
     create_new_blog: "Create a new post"
     all_rights_reserved: "All rights reserved"
     author: "Moroz Taras"
+    translation:
+                uk: "Ukrainian"
+                ru: "Russian"
+                en: "English"
 
 #Page
 page:
